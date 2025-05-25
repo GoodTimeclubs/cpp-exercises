@@ -1,0 +1,16 @@
+*.idea
+*.settings
+*.cproject
+*.project
+*.metadata
+*.idea
+*/.settings
+*/.cproject
+*/.project
+*/.metadata
+*/Debug
+*/cmake*
+*/CMake*
+*/build
+*/Release
+*.clang*
