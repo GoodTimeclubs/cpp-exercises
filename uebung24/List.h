@@ -27,15 +27,14 @@ public:
 	List& operator+(List&);
 	List& operator+(int);
 	int& operator[](int);
-	friend std::ostream& operator<<(std::ostream&)
 
     int count();
     void insert(const int data, const int pos);
     struct Node* link(struct List* other);
-    void print();
     void ll_delete(const int pos);
     void ll_delete();
     void sort();
+    friend std::ostream& operator<<(std::ostream&, List&);
 };
 
 #endif /* LIST_H_ */

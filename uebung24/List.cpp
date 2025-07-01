@@ -52,10 +52,6 @@ List& List::operator+(List& other){
 	return *this;
 }
 
-List& List::operator<<(int data){
-	return List::operator+(data);
-}
-
 int& List::operator[](int pos){
 	return find_d(pos);
 }
@@ -129,9 +125,9 @@ struct Node* List::link(struct List* l2) { //Neue Liste ans Ende anhaengen
     return head1;
 }
 
-void List::print() { // Ausgeben der ganzen Liste (mit Komma getrennt, am Ende Punkt)
+std::ostream& operator<<(std::ostream& out, List& data) { // Ausgeben der ganzen Liste (mit Komma getrennt, am Ende Punkt)
     bool exit = false;
-    Node* head = first;
+    Node* head = data.first;
     if (head) {
         while (head != nullptr && !exit) {
             if (head->get_next() != nullptr) {
@@ -139,12 +135,14 @@ void List::print() { // Ausgeben der ganzen Liste (mit Komma getrennt, am Ende P
                 head = head->get_next();
             }
             else{
-                std::cout << head->data << "." << std::endl;
+                out << head->data;
+                out << ". ";
                 exit = true;
             }
 
         }
     }
+    return out;
 }
 
 void List::ll_delete(const int pos) { //Element an Position x loeschen
