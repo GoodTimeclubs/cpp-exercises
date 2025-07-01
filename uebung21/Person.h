@@ -20,7 +20,7 @@ private:
 public:
 	Person();
 	~Person();
-	Person(const char*, const char*, int);
+	Person(const char*, const char*, const int&);
 	Person(const Person&);
 
 	void set_vorname(const char*);
