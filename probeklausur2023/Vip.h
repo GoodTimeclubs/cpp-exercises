@@ -15,7 +15,7 @@ public:
 	Vip();
 	Vip(char*);
 	virtual ~Vip();
-	void print(std::ostream)const override;
+	void print(std::ostream&)const override;
 
 	friend std::ostream& operator<< (std::ostream&, const Vip&);
 };

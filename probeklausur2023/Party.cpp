@@ -21,7 +21,7 @@ std::ostream& operator<< (std::ostream& out, Party& p){
 
 	out << "Auf der Party sind folgende " << p.get_size() << " Personen:" << std::endl;
 	for (Person* &leute : p.gästeliste){
-		leute->print();
+		leute->print(out);
 		out << std::endl;
 	}
 	return out;

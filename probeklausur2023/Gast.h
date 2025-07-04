@@ -19,7 +19,7 @@ public:
 	Gast();
 	Gast(char* , double);
 	virtual ~Gast();
-	void print(std::ostream)const override;
+	void print(std::ostream&)const override;
 
 	friend std::ostream& operator<< (std::ostream&, const Gast&);
 };

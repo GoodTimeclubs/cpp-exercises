@@ -25,9 +25,6 @@ int main(){
 
 
 
-	//todo: testen ob VIP mit () und Namen inizialisiert werden kann
-	//todo: kopie auch mit = testen
-
 
 	delete(g1);
 	delete(g2);
