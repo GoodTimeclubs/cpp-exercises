@@ -23,7 +23,7 @@ int main(){
 
 	std::cout << party1;
 
-
+	print test;
 
 
 	delete(g1);
