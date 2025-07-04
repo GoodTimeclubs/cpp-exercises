@@ -27,11 +27,11 @@ Person::~Person() {
 	delete name;
 }
 
-void Person::print(){
-	std::cout << name;
+void Person::print(std::ostream out) const{
+	out << name;
 }
 
 std::ostream& operator<< (std::ostream& out, const Person& p){
-	out << p.name;
+	p.print(out);
 	return out;
 }

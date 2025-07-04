@@ -18,7 +18,7 @@ public:
 	Person(const Person&); //Kopieren verbieten
 	virtual ~Person();
 
-	virtual void print();
+	virtual void print(std::ostream)const;
 
 	friend std::ostream& operator<< (std::ostream&, const Person&);
 };

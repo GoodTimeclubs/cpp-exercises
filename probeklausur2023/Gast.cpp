@@ -29,13 +29,13 @@ void Gast::verlassensBenachrichtigung(){
 	std::cout << (Person&)*this << " hat den Laden wieder verlassen." << std::endl;
 }
 
-void Gast::print(){
+void Gast::print(std::ostream out) const{
 	std::cout<< (Person&)*this<< " " << eintrittspreis <<"€ ";
 }
 
 std::ostream& operator<< (std::ostream& out, const Gast& g){
 
-	out << (Person&)g << " " << g.eintrittspreis <<"€ ";
+	g.print(out);
 
 
 	return out;
