@@ -10,6 +10,7 @@
 #include <string.h>
 
 
+
 Person::Person():name(nullptr){
 	name = strdup("k.A.");
 }
@@ -18,11 +19,16 @@ Person::Person(char* inName){
 	if(inName != nullptr) name = strdup(inName);
 }
 
-Person::Person(const Person& other) = delete;
+
 
 Person::~Person() {
 	delete name;
 }
+
+char* Person::get_name() const{
+	return name;
+}
+
 
 void Person::print(std::ostream& out) const{
 	out << name;

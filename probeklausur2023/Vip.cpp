@@ -13,10 +13,10 @@ Vip::~Vip() = default;
 Vip::Vip(char* name):Person(name){}
 
 void Vip::print(std::ostream& out) const{
-	std::cout << (Person&)*this << " (VIP) ";
+	std::cout << get_name() << " (VIP) ";
 }
 
 std::ostream& operator<< (std::ostream& out, const Vip& vip){
-	out << (Person&)vip << " (VIP) ";
+	vip.print(out);
 	return out;
 }

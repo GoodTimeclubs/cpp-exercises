@@ -22,21 +22,18 @@ Gast::~Gast(){
 }
 
 void Gast::eintrittsBenachrichtigung(){
-	std::cout << (Person&)*this << " hat für " << eintrittspreis << " Euro den Laden betreten." << std::endl;
+	std::cout << dynamic_cast<const Person&>(*this) << " hat für " << eintrittspreis << " Euro den Laden betreten." << std::endl;
 }
 
 void Gast::verlassensBenachrichtigung(){
-	std::cout << (Person&)*this << " hat den Laden wieder verlassen." << std::endl;
+	std::cout << dynamic_cast<const Person&>(*this) << " hat den Laden wieder verlassen." << std::endl;
 }
 
-void Gast::print(std::ostream& out) const{
-	std::cout<< (Person&)*this<< " " << eintrittspreis <<"€ ";
+void Gast::print(std::ostream& out) const {
+	out << get_name() << " " << eintrittspreis <<"€ ";
 }
 
-std::ostream& operator<< (std::ostream& out, const Gast& g){
-
+std::ostream& operator<< (std::ostream& out,const Gast& g){
 	g.print(out);
-
-
 	return out;
 }

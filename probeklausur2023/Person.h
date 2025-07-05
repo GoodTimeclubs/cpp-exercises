@@ -15,9 +15,9 @@ private:
 public:
 	Person();
 	Person(char*);
-	Person(const Person&); //Kopieren verbieten
+	Person(const Person&) = delete; //Kopieren verbieten
 	virtual ~Person();
-
+	char* get_name()const;
 	virtual void print(std::ostream&)const;
 
 	friend std::ostream& operator<< (std::ostream&, const Person&);
