@@ -24,6 +24,8 @@ public:
 	operator double();
 	virtual ~Preis();
 
+	void set_price(unsigned int,unsigned int);
+
 	friend std::ostream& operator<< (std::ostream&, const Preis&);
 };
 

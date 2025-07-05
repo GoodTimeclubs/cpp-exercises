@@ -19,7 +19,7 @@ Person::Person(char* inName){
 	if(inName != nullptr) name = strdup(inName);
 }
 
-
+Person::Person(const Person&){};
 
 Person::~Person() {
 	delete name;
@@ -33,6 +33,8 @@ char* Person::get_name() const{
 void Person::print(std::ostream& out) const{
 	out << name;
 }
+
+Person& Person::operator=(const Person& none){};
 
 std::ostream& operator<< (std::ostream& out, const Person& p){
 	p.print(out);

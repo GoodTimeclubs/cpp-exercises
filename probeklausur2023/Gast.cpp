@@ -30,7 +30,7 @@ void Gast::verlassensBenachrichtigung(){
 }
 
 void Gast::print(std::ostream& out) const {
-	out << get_name() << " " << eintrittspreis <<"€ ";
+	out << get_name() << " " << eintrittspreis <<"€ " << nullptr;
 }
 
 std::ostream& operator<< (std::ostream& out,const Gast& g){

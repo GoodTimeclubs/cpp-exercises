@@ -6,13 +6,25 @@
  */
 
 #include "Produkt.h"
+#include "Preis.h"
 
-Produkt::Produkt() {
-	// TODO Auto-generated constructor stub
+template <typename T> Produkt<T>::Produkt(T name,unsigned int euro, unsigned int cent)
+	:bezeichnung(name), preis(euro,cent){}
 
+template <typename T> void Produkt<T>::print(std::ostream& out){
+	out << "Bezeichnung: " << bezeichnung << std::endl << "Preis: " << preis << std::endl;
 }
 
-Produkt::~Produkt() {
-	// TODO Auto-generated destructor stub
+
+template <typename T> std::ostream& operator<<(std::ostream& out, const Produkt<T>& prod){
+	prod.print(out);
+	return out;
 }
 
+template <typename T> void Produkt<T>::set_price(unsigned int euro, unsigned int cent){
+	preis.set_price(euro,cent);
+}
+
+template <typename T> Preis Produkt<T>::get_price(){
+	return preis;
+}

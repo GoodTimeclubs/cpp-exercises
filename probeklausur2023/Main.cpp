@@ -12,7 +12,7 @@
 
 int main(){
 
-	Person* g1 = new Gast((char*)"Paula Partygirl", 1);
+	Person* g1 = new Gast("Paula Partygirl", 1);
 	Person* g2 = new Gast((char*)"Simon Supersimp", 100);
 	Person* p1 = new Person((char*)"kek man");
 	Person* v1 = new Vip((char*)"Ina Influcencer");
@@ -22,6 +22,8 @@ int main(){
 	party1.hereinlassen(g2);
 	party1.hereinlassen(p1);
 	party1.hereinlassen(v1);
+
+	p1 = g2;
 
 	std::cout << party1;
 

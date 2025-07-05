@@ -34,6 +34,7 @@ MyString::MyString(const MyString& other){
 
 const MyString& MyString::operator=(const MyString& other){
 	if(other.get_size() > 0){
+		string.clear();
 			for (char c : other.string){
 				string.push_back(c);
 		}

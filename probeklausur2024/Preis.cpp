@@ -13,6 +13,12 @@ Preis::Preis() {
 }
 
 Preis::Preis(unsigned int euro,unsigned int cent):euro(euro), cent(cent){};
+
+void Preis::set_price(unsigned int euro, unsigned int cent){
+	this->euro = euro;
+	this->cent = cent;
+}
+
 Preis::Preis(double input):euro(0), cent(0){
 	if (input >= 0)operator=(input);
 	else throw std::invalid_argument("Der Preis darf nicht negativ sein!");

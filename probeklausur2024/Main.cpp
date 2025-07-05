@@ -7,10 +7,15 @@
 #include "MyString.h"
 #include <iostream>
 #include "Preis.h"
-int main(){
-	Preis kek(12,4);
+#include "Produkt.h"
+#include "Produkt.cpp"
+#include "Buch.h"
+#include "Buch.cpp"
 
-	std::cout << kek;
+int main(){
+	MyString text((char*)"Test Buch");
+	Buch<MyString> test(text,4,6,7);
+	std::cout << test;
 
 
 }
