@@ -7,11 +7,7 @@
 
 #include "MyString.h"
 
-MyString::MyString(){
-	throw std::invalid_argument("Fehlernde Zeichenkette bei Initialisierung des Strings!");
-}
-
-MyString::MyString(char* in):string(){
+MyString::MyString(char* in){
 	if (in != nullptr){
 		int i = 0;
 		while (in[i] != '\0'){
@@ -21,8 +17,10 @@ MyString::MyString(char* in):string(){
 	}
 }
 
-MyString::MyString(std::string in):string(){
-	MyString((char*)in.c_str());
+MyString::MyString(const std::string& in){
+	for (char c : in){
+		string.push_back(c);
+	}
 }
 
 MyString::~MyString() = default;

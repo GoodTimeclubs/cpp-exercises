@@ -15,10 +15,11 @@ template<typename T> class Produkt {
 private:
 	T bezeichnung;
 	Preis preis;
-	Produkt<T>() = delete; //Verbieten
+
 public:
-	Produkt<T>(T,unsigned int, unsigned int);
-	virtual ~Produkt<T>() = default;
+	Produkt() = delete; //Verbieten
+	Produkt(T,unsigned int, unsigned int);
+	virtual ~Produkt() = default;
 
 	void set_price(unsigned int,unsigned int);
 	Preis get_price();

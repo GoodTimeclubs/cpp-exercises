@@ -9,7 +9,10 @@
 #include "Preis.h"
 
 template <typename T> Produkt<T>::Produkt(T name,unsigned int euro, unsigned int cent)
-	:bezeichnung(name), preis(euro,cent){}
+	:bezeichnung((char*)"none"), preis(0,0){
+	set_price(euro,cent);
+	bezeichnung = name;
+}
 
 template <typename T> void Produkt<T>::print(std::ostream& out){
 	out << "Bezeichnung: " << bezeichnung << std::endl << "Preis: " << preis << std::endl;

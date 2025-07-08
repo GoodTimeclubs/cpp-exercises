@@ -47,6 +47,7 @@ Preis::operator double(){
 }
 Preis::~Preis()= default;
 
+
 std::ostream& operator<< (std::ostream& out, const Preis& data){
 
 	double eplus = data.cent;

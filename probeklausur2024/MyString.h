@@ -15,9 +15,9 @@ public:
 std::vector<char> string;
 
 public:
-	MyString();
+	MyString() = delete;
 	MyString(char*);
-	MyString(std::string);
+	MyString(const std::string&);
 	MyString(const MyString&);
 	const MyString& operator=(const MyString&);
 	int get_size() const;
