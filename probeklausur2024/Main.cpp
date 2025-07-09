@@ -10,13 +10,21 @@
 #include "Produkt.h"
 #include "Produkt.cpp"
 #include "Buch.h"
-#include "Buch.cpp"
+#include "Elektronik.h"
+#include <vector>
 
 int main(){
-	MyString text((char*)"Test Buch");
-	Buch<MyString> test(text,4,6,7);
-	std::cout << test;
+	std::vector<Produkt<MyString>*> list;
 
+	list.push_back(new Buch<MyString> ((char*)"Leben des Brian",250,9,99));
+	list.push_back(new Elektronik<MyString> ((char*)"Playstation",399,99));
 
+	for(Produkt<MyString>* p : list){
+		std::cout << *p <<std::endl;
+	}
+
+	for(Produkt<MyString>* p : list){
+			delete p;
+	}
 }
 

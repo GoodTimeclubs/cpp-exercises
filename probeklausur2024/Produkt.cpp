@@ -19,7 +19,7 @@ template <typename T> void Produkt<T>::print(std::ostream& out){
 }
 
 
-template <typename T> std::ostream& operator<<(std::ostream& out, const Produkt<T>& prod){
+template <typename T> std::ostream& operator<<(std::ostream& out, Produkt<T>& prod){
 	prod.print(out);
 	return out;
 }

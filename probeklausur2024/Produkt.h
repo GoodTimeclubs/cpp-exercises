@@ -23,7 +23,7 @@ public:
 
 	void set_price(unsigned int,unsigned int);
 	Preis get_price();
-	void print(std::ostream&);
+	void virtual print(std::ostream&);
 	template <typename U> friend std::ostream& operator<<(std::ostream&, const Produkt<U>&);
 };
 

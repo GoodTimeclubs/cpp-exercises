@@ -42,14 +42,14 @@ public:
 		return buch;
 	}
 
-	void print_b(std::ostream& out){
+	void print(std::ostream& out) override{
 		out << "Es folgt die Buchbeschreibung:" <<std::endl;
 		Produkt<T>::print(out);
 		out << "Seiten: " << seitenanzahl << std::endl;
 	}
 
 	friend std::ostream& operator<<(std::ostream& out, Buch<T>& b){
-		b.print_b(out);
+		b.print(out);
 		return out;
 	}
 
